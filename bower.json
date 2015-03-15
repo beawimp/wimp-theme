@@ -18,6 +18,8 @@
     "composer.json",
     "phpunit.xml.dist"
   ],
-  "devDependencies": {},
+  "devDependencies": {
+    "gridle": "~1.3.38"
+  },
   "keywords": []
 }
