@@ -1,0 +1,9 @@
+// Import gridle
+@import "../../../../bower_components/gridle/sass/gridle/gridle";
+
+// Setup the grid
+@include gridle_setup((
+	context: 12,
+	gutter-width: 20px,
+	direction: ltr
+));
