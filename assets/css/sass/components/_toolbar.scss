@@ -1,3 +1,28 @@
-.wimp-toolbar {
-	background-color:$color-main;
+#wimp-toolbar {
+	background-color: $color-main;
+	position:         fixed;
+	top:              0;
+	color:            $color-default-light;
+	width:            100%;
+	border-bottom:    1px solid $color-main-light;
+	padding:          13px 15px;
+	@include font-size( 12px );
+	a {
+		color: $color-link-light;
+	}
+}
+
+.admin-bar {
+	#wimp-toolbar {
+		top: 32px;
+	}
+}
+
+#slogan, #account-credentials {
+	display: inline-block;
+}
+
+#account-credentials {
+	@include navlist();
+	float: right;
 }

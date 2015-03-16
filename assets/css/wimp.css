@@ -193,6 +193,14 @@ input[type="checkbox"], input[type="radio"] {
   box-sizing: border-box;
   padding: 0; }
 
+*,
+*:after,
+*:before {
+  box-sizing: border-box; }
+
+a {
+  text-decoration: none; }
+
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -203,5 +211,94 @@ input[type="checkbox"], input[type="radio"] {
   max-width: 1058px;
   margin: 0 auto; }
 
-.wimp-toolbar {
-  background-color: #0f5b9f; }
+blockquote + figcaption cite {
+  display: block;
+  font-size: inherit;
+  text-align: right; }
+
+body {
+  word-wrap: break-word; }
+
+pre code {
+  word-wrap: normal; }
+
+html {
+  font: normal 100%/1.65 sans-serif; }
+
+body {
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  color: #444; }
+
+p {
+  margin: auto auto 1.5em; }
+  p + p {
+    text-indent: 1.5em;
+    margin-top: -1.5em; }
+
+small {
+  font-size: 65%; }
+
+input,
+abbr,
+acronym,
+blockquote,
+code,
+kbd,
+q,
+samp,
+var {
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none; }
+
+pre {
+  white-space: pre; }
+  pre code {
+    white-space: -moz-pre-wrap;
+    white-space: pre-wrap; }
+
+code {
+  white-space: pre;
+  font-family: monospace; }
+
+abbr {
+  -webkit-font-variant: small-caps;
+  -moz-font-variant: small-caps;
+  -ms-font-variant: small-caps;
+  font-variant: small-caps;
+  font-weight: 600;
+  text-transform: lowercase;
+  color: gray; }
+  abbr[title]:hover {
+    cursor: help; }
+
+#wimp-toolbar {
+  background-color: #0f5b9f;
+  position: fixed;
+  top: 0;
+  color: #fff;
+  width: 100%;
+  border-bottom: 1px solid #a6c6d2;
+  padding: 13px 15px;
+  font-size: 12px;
+  font-size: 0.75rem; }
+  #wimp-toolbar a {
+    color: #fff; }
+
+.admin-bar #wimp-toolbar {
+  top: 32px; }
+
+#slogan, #account-credentials {
+  display: inline-block; }
+
+#account-credentials {
+  float: right; }
+  #account-credentials ul {
+    padding: 0;
+    margin: 0; }
+    #account-credentials ul li {
+      display: inline-block; }

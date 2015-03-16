@@ -97,14 +97,8 @@ module.exports = function( grunt ) {
 		},
 
 		watch:  {
-			livereload: {
-				files: ['assets/css/*.css'],
-				options: {
-					livereload: true
-				}
-			},
 			styles: {
-				files: ['assets/css/sass/*.scss'],
+				files: ['assets/css/sass/**/*.scss'],
 				tasks: ['sass', 'autoprefixer', 'cssmin'],
 				options: {
 					debounceDelay: 500
