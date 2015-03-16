@@ -6,5 +6,17 @@
  * Licensed under the GPLv2+ license.
  */
 
-// Load the grid system
+// Import Helpers
+@import "helpers/helpers";
+
+// Import Base styles
+@import "base/base";
+
+// Import the grid system
 @import "grid/grid";
+
+// Import Components styles
+@import "components/components";
+
+// Import layout styles
+@import "layout/layout";
