@@ -89,7 +89,8 @@ function styles( $debug = false ) {
  * @return void.
  */
 function header_meta() {
-	$humans = '<link type="text/plain" rel="author" href="' . esc_url( WIMP_TEMPLATE_URL . '/humans.txt' ) . '" />';
+	$meta  = '<link type="text/plain" rel="author" href="' . esc_url( WIMP_TEMPLATE_URL . '/humans.txt' ) . '" />';
+	$meta .= '<link rel="apple-touch-icon" href="' . esc_url( WIMP_TEMPLATE_URL . 'images/apple-touch-icon.png' ) . '">';
 
-	echo apply_filters( 'wimp_humans', $humans );
+	echo apply_filters( 'wimp_humans', $meta );
 }
