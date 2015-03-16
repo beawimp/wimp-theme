@@ -6,7 +6,7 @@
 	width:            100%;
 	border-bottom:    1px solid $color-main-light;
 	padding:          13px 15px;
-	@include font-size( 12px );
+	@include font-size(14px);
 	a {
 		color: $color-link-light;
 	}
@@ -25,4 +25,14 @@
 #account-credentials {
 	@include navlist();
 	float: right;
+	li:first-child {
+		border-right:  1px solid $color-default-light;
+		padding-right: 5px;
+		margin-right:  5px;
+		line-height:   1.2em;
+		a {
+			padding: 0 5px;
+			display: block;
+		}
+	}
 }
