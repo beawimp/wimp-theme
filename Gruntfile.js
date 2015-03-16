@@ -85,6 +85,17 @@ module.exports = function( grunt ) {
 			}
 		},
 
+		imagemin: {
+			dynamic: {
+				files: [{
+					expand: true,
+					cwd: 'images/src/',
+					src: ['**/*.{png,jpg,gif}'],
+					dest: 'images/'
+				}]
+			}
+		},
+
 		watch:  {
 			livereload: {
 				files: ['assets/css/*.css'],
@@ -169,10 +180,11 @@ module.exports = function( grunt ) {
 
 	// Register tasks
 
-	grunt.registerTask( 'default', ['jshint', 'concat', 'uglify', 'sass', 'autoprefixer', 'cssmin'] );
+	grunt.registerTask( 'default', ['jshint', 'concat', 'uglify', 'sass', 'autoprefixer', 'cssmin', 'imagemin'] );
 
 	grunt.registerTask( 'css', ['sass', 'autoprefixer', 'cssmin'] );
 	grunt.registerTask( 'js', ['jshint', 'concat', 'uglify'] );
+	grunt.registerTask( 'img', ['imagemin'] );
 
 	grunt.registerTask( 'build', ['default', 'clean', 'copy', 'compress'] );
 
