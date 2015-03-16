@@ -89,7 +89,38 @@ function styles( $debug = false ) {
  * @return void.
  */
 function header_meta() {
-	$humans = '<link type="text/plain" rel="author" href="' . esc_url( WIMP_TEMPLATE_URL . '/humans.txt' ) . '" />';
+	$meta  = '<link type="text/plain" rel="author" href="' . esc_url( WIMP_TEMPLATE_URL . '/humans.txt' ) . '" />';
+	$meta .= '<link rel="apple-touch-icon" href="' . esc_url( WIMP_TEMPLATE_URL . 'images/apple-touch-icon.png' ) . '">';
 
-	echo apply_filters( 'wimp_humans', $humans );
+	echo apply_filters( 'wimp_humans', $meta );
 }
+
+/**
+ * Filters wp_title to print a neat <title> tag based on what is being viewed.
+ *
+ * @since 0.1.0
+ */
+function _wimp_wp_title( $title, $sep ) {
+	global $page, $paged;
+
+	if ( is_feed() ) {
+		return $title;
+	}
+
+	// Add the blog name
+	$title .= get_bloginfo( 'name' );
+
+	// Add the blog description for the home/front page.
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) ) {
+		$title .= " $sep $site_description";
+	}
+
+	// Add a page number if necessary:
+	if ( $paged >= 2 || $page >= 2 ) {
+		$title .= " $sep " . sprintf( __( 'Page %s', 'wimp' ), max( $paged, $page ) );
+	}
+
+	return $title;
+}
+add_filter( 'wp_title', '_wimp_wp_title', 10, 2 );
