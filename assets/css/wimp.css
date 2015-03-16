@@ -203,5 +203,7 @@ input[type="checkbox"], input[type="radio"] {
   max-width: 1058px;
   margin: 0 auto; }
 
-.wimp-toolbar {
-  background-color: #0f5b9f; }
+#wimp-toolbar {
+  background-color: #0f5b9f;
+  position: fixed;
+  top: 0; }

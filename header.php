@@ -18,7 +18,17 @@
 
 	<?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
 	<!--[if lt IE 8]>
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 	<![endif]-->
+	<section id="wimp-toolbar">
+		<span id="slogan">Ask a person, not a search engine</span>
+		<nav id="account-credentials" role="navigation">
+			<ul>
+				<li><a href="#login">Login</a></li>
+				<li><a href="#signup">Signup</a></li>
+				<li><a href="#search" class="search">Search</a></li>
+			</ul>
+		</nav>
+	</section>

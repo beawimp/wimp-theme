@@ -1,3 +1,5 @@
-.wimp-toolbar {
+#wimp-toolbar {
 	background-color:$color-main;
+	position:fixed;
+	top:0;
 }
