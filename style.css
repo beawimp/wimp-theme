@@ -17,3 +17,7 @@
  * Copyright (c) 2014 10up, LLC
  * https://github.com/lkwdwrd/generator-wp-make
  */
+
+body {
+	font-family:courier;
+}
