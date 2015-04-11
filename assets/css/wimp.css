@@ -201,6 +201,11 @@ input[type="checkbox"], input[type="radio"] {
 a {
   text-decoration: none; }
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto; }
+
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -349,3 +354,13 @@ abbr {
     #account-credentials li:first-child a {
       padding: 0 5px;
       display: block; }
+
+#logo-banner {
+  margin-top: 50px;
+  padding: 15px 0; }
+  #logo-banner a {
+    display: block;
+    margin: 0 auto;
+    width: 24%; }
+  #logo-banner img {
+    margin: 0 auto; }
