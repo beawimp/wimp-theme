@@ -89,10 +89,11 @@ function styles( $debug = false ) {
  * @return void.
  */
 function header_meta() {
-	$meta  = '<link type="text/plain" rel="author" href="' . esc_url( WIMP_TEMPLATE_URL . '/humans.txt' ) . '" />';
-	$meta .= '<link rel="apple-touch-icon" href="' . esc_url( WIMP_TEMPLATE_URL . 'images/apple-touch-icon.png' ) . '">';
+	$meta  = '<link type="text/plain" rel="author" href="' . esc_url( WIMP_TEMPLATE_URL . '/humans.txt' ) . '" />' . "\n";
+	$meta .= '<link rel="shortcut icon" href="' . esc_url( get_template_directory_uri() . '/favicon.png' ) . '" />' . "\n";
+	$meta .= '<link rel="apple-touch-icon" href="' . esc_url( WIMP_TEMPLATE_URL . 'images/apple-touch-icon.png' ) . '">' . "\n";
 
-	echo apply_filters( 'wimp_humans', $meta );
+	echo apply_filters( 'wimp_header_meta', $meta );
 }
 
 /**
