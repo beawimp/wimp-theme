@@ -42,7 +42,11 @@
 				</a>
 			</div>
 		</section>
-		<section id="main-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-
-		</section>
+		<nav id="main-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+			<?php wp_nav_menu( array(
+				'theme_location' => 'primary',
+				'container'      => '',
+				'menu_class'     => 'primary-nav',
+			) ); ?>
+		</nav>
 	</header>
