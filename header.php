@@ -18,17 +18,31 @@
 
 	<?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 	<!--[if lt IE 8]>
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 	<![endif]-->
-	<section id="wimp-toolbar">
-		<span id="slogan">Ask a person, not a search engine</span>
-		<nav id="account-credentials" role="navigation">
-			<ul>
-				<li><a href="#login">Login</a></li>
-				<li><a href="#signup">Signup</a></li>
-				<li><a href="#search" class="search">Search</a></li>
-			</ul>
-		</nav>
-	</section>
+	<header class="site-header" role="banner" >
+		<section id="wimp-toolbar">
+			<span id="slogan">Ask a person, not a search engine</span>
+			<nav id="account-credentials" role="navigation">
+				<ul>
+					<li><a href="#login">Login</a></li>
+					<li><a href="#signup">Signup</a></li>
+					<li><a href="#search" class="search">Search</a></li>
+				</ul>
+			</nav>
+		</section>
+		<section id="logo-banner">
+			<div itemscope itemtype="http://schema.org/Organization">
+				<a itemprop="url" href="<?php echo esc_url( home_url() ); ?>">
+					<img itemprop="logo"
+					     src="<?php echo esc_url( WIMP_TEMPLATE_URL . '/images/logo-full.png' ); ?>"
+					     alt="<?php echo esc_attr( bloginfo( 'name' ) ); ?>" />
+				</a>
+			</div>
+		</section>
+		<section id="main-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+
+		</section>
+	</header>
