@@ -7,6 +7,7 @@
 	border-bottom:    1px solid $color-main-light;
 	padding:          13px 15px;
 	@include font-size(14px);
+
 	a {
 		color: $color-link-light;
 	}

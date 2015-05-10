@@ -255,7 +255,7 @@ pre code {
   word-wrap: normal; }
 
 html {
-  font: normal 100%/1.65 sans-serif; }
+  font: normal 100%/1.65 "Duru Sans", sans-serif; }
 
 body {
   -webkit-hyphens: auto;
@@ -450,6 +450,30 @@ object {
 .gallery-caption {
   display: block; }
 
+.button:focus {
+  outline: none; }
+
+.button-hover {
+  overflow: hidden;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s; }
+  .button-hover::before, .button-hover::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    bottom: 100%;
+    left: 0;
+    z-index: -1;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    -webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+    transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1); }
+  .button-hover::before {
+    background-color: #409ced; }
+  .button-hover::after {
+    background-color: #0f5b9f; }
+
 #wimp-toolbar {
   background-color: #0f5b9f;
   position: fixed;
@@ -495,28 +519,82 @@ object {
   #logo-banner img {
     margin: 0 auto; }
 
+.main-nav {
+  background-color: #282828;
+  *zoom: 1; }
+  .main-nav:before, .main-nav:after {
+    content: " ";
+    display: table; }
+  .main-nav:after {
+    clear: both; }
+
 .primary-nav, .primary-nav ul {
   list-style: none;
   position: relative;
   margin: 0;
   padding: 0; }
 
-.primary-nav li {
-  position: relative;
-  float: left; }
-  .primary-nav li:hover > ul {
+.primary-nav {
+  display: table;
+  margin: 0 auto;
+  font-size: 14px;
+  font-size: 0.875rem; }
+  .primary-nav > li {
+    float: left; }
+    .primary-nav > li > a {
+      position: relative;
+      background: none;
+      overflow: hidden;
+      z-index: 1;
+      padding: 7px 16px;
+      color: #fff; }
+      .primary-nav > li > a::before, .primary-nav > li > a::after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        bottom: 100%;
+        left: 0;
+        z-index: -1;
+        -webkit-transition: -webkit-transform 0.2s;
+                transition: transform 0.2s;
+        -webkit-transition-timing-function: cubic-bezier(0.55, 0, 0.105, 1);
+                transition-timing-function: cubic-bezier(0.55, 0, 0.105, 1); }
+      .primary-nav > li > a::before {
+        background: #1376ce; }
+      .primary-nav > li > a::after {
+        background: #0f5b9f; }
+      .primary-nav > li > a:hover::before, .primary-nav > li > a:hover::after {
+        -webkit-transform: translate3d(0, 100%, 0);
+                transform: translate3d(0, 100%, 0); }
+      .primary-nav > li > a:hover::after {
+        -webkit-transition-delay: 0.125s;
+                transition-delay: 0.125s; }
+    .primary-nav > li:hover {
+      -webkit-transition-delay: 0.125s;
+              transition-delay: 0.125s;
+      background-color: #0f5b9f; }
+  .primary-nav li {
+    position: relative; }
+    .primary-nav li:hover > ul {
+      display: block; }
+  .primary-nav a {
     display: block; }
-.primary-nav a {
-  display: block; }
-.primary-nav ul {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  padding: 0; }
-  .primary-nav ul li {
-    width: 200px;
-    float: none; }
-  .primary-nav ul ul {
-    top: 0;
-    left: 100%; }
+  .primary-nav ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 0;
+    background-color: #f5f5f5; }
+    .primary-nav ul li {
+      width: 200px;
+      float: none; }
+    .primary-nav ul ul {
+      top: 0;
+      left: 100%; }
+    .primary-nav ul a {
+      color: #333;
+      padding: 3px 9px; }
+      .primary-nav ul a:hover {
+        background-color: #ebebeb; }

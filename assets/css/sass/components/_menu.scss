@@ -1,0 +1,110 @@
+.main-nav {
+	background-color: $color-highlight-dark;
+
+	@include clearfix();
+}
+
+// Reset our ul tags
+.primary-nav, .primary-nav ul {
+	list-style: none;
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+
+.primary-nav {
+	display: table;
+	margin: 0 auto;
+
+	@include font-size(14px);
+
+	> li  {
+		float: left;
+
+		> a {
+			position: relative;
+			background: none;
+			overflow: hidden;
+			z-index: 1;
+			padding: 7px 16px;
+			color: $color-default-light;
+
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				bottom: 100%;
+				left: 0;
+				z-index: -1;
+				transition: transform 0.2s;
+				transition-timing-function: cubic-bezier( 0.55, 0, 0.105, 1 );
+			}
+			&::before {
+				background: lighten( $color-main, 10% );
+			}
+			&::after {
+				background: $color-main;
+			}
+			&:hover::before,
+			&:hover::after {
+				transform: translate3d( 0, 100%, 0 );
+			}
+			&:hover::after {
+				transition-delay: 0.125s;
+			}
+		}
+
+		&:hover {
+			transition-delay: 0.125s;
+			background-color: $color-main;
+		}
+	}
+
+	li {
+		position: relative;
+
+		&.current-menu-item {
+
+		}
+		&:hover {
+
+			> ul {
+				display: block;
+			}
+		}
+	}
+
+	a {
+		display: block;
+	}
+
+	ul {
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		padding: 0;
+		background-color: #f5f5f5;
+
+		li {
+			width: 200px;
+			float: none;
+		}
+
+		ul {
+			top: 0;
+			left: 100%;
+		}
+
+		a {
+			color: $color-default-dark;
+			padding: 3px 9px;
+
+			&:hover {
+				background-color: #ebebeb;
+			}
+		}
+	}
+}

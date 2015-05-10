@@ -3,7 +3,7 @@ namespace WIMP\Core;
 
 // Set the max width of content for oembeds and other content
 if ( ! isset( $content_width ) ) {
-	$content_width = 1074;
+	$content_width = 1058;
 }
 
 /**
@@ -91,6 +91,15 @@ function scripts( $debug = false ) {
 function styles( $debug = false ) {
 	$min = ( $debug || defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
+	// Font stack
+	wp_enqueue_style(
+		'wimp-fonts',
+		'http://fonts.googleapis.com/css?family=Duru+Sans',
+		array(),
+		WIMP_VERSION
+	);
+
+	// General theme styles
 	wp_enqueue_style(
 		'wimp',
 		WIMP_URL . "/assets/css/wimp{$min}.css",

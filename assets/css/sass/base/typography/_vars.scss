@@ -9,7 +9,7 @@
 
 $typl8-serif-boolean: false !default;
 $typl8-custom-font: false !default;
-$typl8-font-family: if($typl8-serif-boolean, serif, sans-serif) !default;
+$typl8-font-family: 'Duru Sans', sans-serif !default;
 $typl8-font-weight: normal !default;
 $typl8-line-height: 1.65 !default;
 $typl8-font-size: 100 !default;
