@@ -1,0 +1,47 @@
+// Reset our ul tags
+.primary-nav, .primary-nav ul {
+	list-style: none;
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+
+.primary-nav {
+
+	li {
+		position: relative;
+		float: left;
+
+		&.current-menu-item {
+
+		}
+		&:hover {
+
+			> ul {
+				display: block;
+			}
+		}
+	}
+
+	a {
+		display: block;
+	}
+
+	ul {
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		padding: 0;
+
+		li {
+			width: 200px;
+			float: none;
+		}
+
+		ul {
+			top: 0;
+			left: 100%;
+		}
+	}
+}

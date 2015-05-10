@@ -1,5 +1,8 @@
 // Load the CSS reset
 @import "normalize";
 
-// Load our global styles
-@import "global";
+// Import typography styles
+@import "typography/typography";
+
+// Import WordPress styles
+@import "wordpress";

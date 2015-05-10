@@ -6,20 +6,17 @@
  * Licensed under the GPLv2+ license.
  */
 
-// Import Helpers
-@import "helpers/helpers";
+// Import global styles
+@import "global/global";
 
 // Import Base styles
 @import "base/base";
-
-// Import the grid system
-@import "grid/grid";
-
-// Import typography styles
-@import "typography/typography";
 
 // Import Components styles
 @import "components/components";
 
 // Import layout styles
 @import "layout/layout";
+
+// Import template styles
+@import "templates/templates";
