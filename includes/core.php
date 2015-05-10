@@ -1,6 +1,11 @@
 <?php
 namespace WIMP\Core;
 
+// Set the max width of content for oembeds and other content
+if ( ! isset( $content_width ) ) {
+	$content_width = 1074;
+}
+
 /**
  * Set up theme defaults and register supported WordPress features.
  *
@@ -15,27 +20,42 @@ function setup() {
 		return __NAMESPACE__ . "\\$function";
 	};
 
-	add_action( 'init',               $n( 'i18n' )        );
-	add_action( 'wp_head',            $n( 'header_meta' ) );
-	add_action( 'wp_enqueue_scripts', $n( 'scripts' )     );
-	add_action( 'wp_enqueue_scripts', $n( 'styles' )      );
+	add_action( 'after_setup_theme',  $n( 'theme_init' )            );
+	add_action( 'wp_head',            $n( 'header_meta' )           );
+	add_action( 'wp_enqueue_scripts', $n( 'scripts' )               );
+	add_action( 'wp_enqueue_scripts', $n( 'styles' )                );
+	add_filter( 'wp_title',           $n( '_wimp_wp_title' ), 10, 2 );
 }
 
 /**
- * Makes WP Theme available for translation.
- *
- * Translations can be added to the /lang directory.
- * If you're building a theme based on WP Theme, use a find and replace
- * to change 'wptheme' to the name of your theme in all template files.
- *
- * @uses load_theme_textdomain() For translation/localization support.
- *
- * @since 0.1.0
- *
- * @return void.
+ * Initialize the theme settings
  */
-function i18n() {
+function theme_init() {
+	// Load theme translations
 	load_theme_textdomain( 'wimp', WIMP_PATH . '/languages' );
+
+	// Add the default posts and comments RSS feed links
+	add_theme_support( 'automatic-feed-links' );
+
+	// Let WordPress manage the document title.
+	add_theme_support( 'title-tag' );
+
+	// Enable post thumbnails
+	add_theme_support( 'post-thumbnails' );
+
+	// Register our menus
+	register_nav_menus( array(
+		'primary' => esc_html__( 'Primary Menu', 'wimp' ),
+	) );
+
+	// Enable HTML5 default core markup
+	add_theme_support( 'html5', array(
+		'search-form',
+		'comment-form',
+		'comment-list',
+		'gallery',
+		'caption',
+	) );
 }
 
 /**
@@ -124,4 +144,3 @@ function _wimp_wp_title( $title, $sep ) {
 
 	return $title;
 }
-add_filter( 'wp_title', '_wimp_wp_title', 10, 2 );
