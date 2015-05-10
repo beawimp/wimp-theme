@@ -21,7 +21,7 @@ define( 'WIMP_PATH',         get_template_directory() . '/' );
 define( 'WIMP_INC',          WIMP_PATH . 'includes/' );
 
 // Include compartmentalized functions
-require_once WIMP_INC . 'functions/core.php';
+require_once WIMP_INC . 'core.php';
 
 // Include lib classes
 
